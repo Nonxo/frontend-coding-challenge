@@ -1,6 +1,6 @@
 /** Service to Fetch all members **/
 
-import data from "../../../../api/json_files/absences.json";
+import data from "../../api/json_files/members.json";
 
 export const fetchAllMembers = () => {
   fetch(data).then((res) => {

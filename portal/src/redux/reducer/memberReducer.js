@@ -5,20 +5,23 @@ const memberReducer = (state = {}, action) => {
     case types.FETCH_MEMBERS:
       return {
         ...state,
-        loading: true
-      }
+        loading: true,
+      };
     case types.FETCH_MEMBERS_SUCCESS:
       return {
         ...state,
         membersList: action.data,
-        loading: false
-      }
+        loading: false,
+      };
     case types.FETCH_MEMBERS_ERROR:
       return {
         ...state,
         error: action.error,
-        loading: false
-      }
+        loading: false,
+      };
+
+    default:
+      return state;
   }
 };
 
