@@ -1164,7 +1164,7 @@
     "@chakra-ui/react-utils" "1.1.2"
     "@chakra-ui/utils" "1.8.0"
 
-"@chakra-ui/avatar@1.2.5":
+"@chakra-ui/avatar@1.2.5", "@chakra-ui/avatar@^1.2.5":
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/@chakra-ui/avatar/-/avatar-1.2.5.tgz#c11026a9e9e977d43e92212f0b27f43c52d42bd5"
   integrity sha512-+BiCKZO/+oM7C5wYGKWttRQZTapVH6RSXxqhASgFBN1iz7H0mH1JtSSib7eBNKXZLM+RQcGrLPJBjQnc2TLVKA==
@@ -1824,6 +1824,11 @@
     lodash "^4.17.20"
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
+
+"@fontsource/overpass@^4.4.5":
+  version "4.4.5"
+  resolved "https://registry.yarnpkg.com/@fontsource/overpass/-/overpass-4.4.5.tgz#7ca734220da5c56d2e809f677b1eebc5f1fef5ef"
+  integrity sha512-yjJfCv/rpc1xAVGENWOvH/pF+dK9dtRMdJuoVBX+wbizzLOggWYh4PaZqhNc1KCT+0ePKvINir4IatnM1pKTDA==
 
 "@hapi/address@2.x.x":
   version "2.1.4"
@@ -3933,6 +3938,13 @@ caseless@~0.12.0:
   version "0.12.0"
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
   integrity sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
+
+chakra-paginator@^0.7.2:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/chakra-paginator/-/chakra-paginator-0.7.2.tgz#04ef4b46d8c191da2795b939d0100de495f6932b"
+  integrity sha512-Zi0sjyVqbutNS94K83Wc7A94W44r1v4uAuO2sauXY6YCmYy0v3W1XqSNDxHN1rRvUI8GmFAD4lF9Ak/LA3XTeg==
+  dependencies:
+    lodash.union "^4.6.0"
 
 chalk@2.4.2, chalk@^2.0.0, chalk@^2.4.1, chalk@^2.4.2:
   version "2.4.2"
@@ -7986,6 +7998,11 @@ lodash.templatesettings@^4.0.0:
   dependencies:
     lodash._reinterpolate "^3.0.0"
 
+lodash.union@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.union/-/lodash.union-4.6.0.tgz#48bb5088409f16f1821666641c44dd1aaae3cd88"
+  integrity sha1-SLtQiECfFvGCFmZkHETdGqrjzYg=
+
 lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
@@ -10179,6 +10196,11 @@ react-focus-lock@2.5.0:
     react-clientside-effect "^1.2.2"
     use-callback-ref "^1.2.1"
     use-sidecar "^1.0.1"
+
+react-icons@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.2.0.tgz#6dda80c8a8f338ff96a1851424d63083282630d0"
+  integrity sha512-rmzEDFt+AVXRzD7zDE21gcxyBizD/3NqjbX6cmViAgdqfJ2UiLer8927/QhhrXQV7dEj/1EGuOTPp7JnLYVJKQ==
 
 react-is@^16.13.1, react-is@^16.7.0, react-is@^16.8.1:
   version "16.13.1"

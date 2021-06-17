@@ -1,6 +1,6 @@
 import * as types from "../actions";
 
-const memberReducer = (state = {}, action) => {
+const membersReducer = (state = {}, action) => {
   switch (action.type) {
     case types.FETCH_MEMBERS:
       return {
@@ -10,7 +10,7 @@ const memberReducer = (state = {}, action) => {
     case types.FETCH_MEMBERS_SUCCESS:
       return {
         ...state,
-        membersList: action.data,
+        listOfAllMembers: action.data,
         loading: false,
       };
     case types.FETCH_MEMBERS_ERROR:
@@ -25,4 +25,4 @@ const memberReducer = (state = {}, action) => {
   }
 };
 
-export default memberReducer;
+export default membersReducer;

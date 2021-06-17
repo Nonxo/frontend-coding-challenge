@@ -1,11 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.scss";
+import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { Provider } from "react-redux";
 import Store from "./redux/store";
+import "@fontsource/overpass";
 
 // 2. Extend the theme to include custom colors, fonts, etc
 const colors = {
