@@ -1,6 +1,6 @@
 import * as types from "../actions";
 
-const membersReducer = (state = {}, action) => {
+const membersReducer = (state = { listOfAllMembers: [] }, action) => {
   switch (action.type) {
     case types.FETCH_MEMBERS:
       return {

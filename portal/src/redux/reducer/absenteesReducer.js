@@ -1,6 +1,6 @@
 import * as types from "../actions";
 
-const absenteesReducer = (state = {}, action) => {
+const absenteesReducer = (state = { membersList: [] }, action) => {
   switch (action.type) {
     case types.FETCH_ABSENTEES:
       return {
@@ -19,6 +19,11 @@ const absenteesReducer = (state = {}, action) => {
         error: action.error,
         loading: false,
       };
+    case types.FILTER_BY_TYPE:
+      return {
+        ...state,
+        loading: false
+      }
 
     default:
       return state;

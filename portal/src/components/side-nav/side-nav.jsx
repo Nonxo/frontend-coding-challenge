@@ -10,6 +10,7 @@ const SideNav = () => {
       flexDirection="column"
       p="4"
       bg="gray.800"
+      minH="100vh"
       justifyItems="center"
     >
       <Box h="30" alignSelf="center">

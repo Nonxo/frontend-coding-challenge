@@ -3,15 +3,15 @@ import "./app.styles.scss";
 import { Box, Flex } from "@chakra-ui/layout";
 import SideNav from "../../components/side-nav/side-nav";
 import Header from "../../components/header/header";
-import DashboardAbsences from "./dashboard/dashboard.component";
 import { useSelector } from "react-redux";
+import Absences from "./dashboard/absences";
 
 const AppComponent = () => {
   const absenteesSelector = useSelector((state) => state.Absentees);
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
-    if (absenteesSelector) {
+    if (absenteesSelector.membersList) {
       setTotal(absenteesSelector.membersList.length);
     }
   }, [absenteesSelector]);
@@ -23,7 +23,7 @@ const AppComponent = () => {
         <Box flex="1" m="3">
           <Flex flexDirection="column">
             <Header counts={total} />
-            <DashboardAbsences />
+            <Absences />
           </Flex>
         </Box>
       </Flex>

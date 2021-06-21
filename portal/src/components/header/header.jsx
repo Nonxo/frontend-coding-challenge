@@ -22,7 +22,7 @@ const Header = ({ counts }) => {
     <Flex>
       <Box m="3">
         <Heading size="lg" fontFamily="Overpass">
-          Absentees
+          Absences
           <Text
             display="inline-flex"
             fontSize="sm"
@@ -31,7 +31,7 @@ const Header = ({ counts }) => {
             color="gray.500"
             pl="5px"
           >
-            {counts} Total absentees
+            {counts} Total absences
           </Text>
         </Heading>
       </Box>

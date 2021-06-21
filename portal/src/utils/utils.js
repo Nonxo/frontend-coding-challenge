@@ -1,12 +1,11 @@
 export const Utils = {
-  getAbsenceStatus(timeStamp) {
-    switch (timeStamp) {
-      case "confirmedAt":
-        return "Confirmed";
-      case "rejectedAt":
-        return "Rejected";
-      default:
-        return "Requested";
+  getAbsenceStatus(obj) {
+    if (obj.confirmedAt) {
+      return "Confirmed";
+    } else if (obj.rejectedAt) {
+      return "Rejected";
+    } else {
+      return "Requested";
     }
   },
 };
