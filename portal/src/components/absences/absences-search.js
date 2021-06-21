@@ -3,7 +3,7 @@ import { Select, Input, Text } from "@chakra-ui/react";
 import { HStack, VStack } from "@chakra-ui/layout";
 
 const AbsencesSearch = (props) => {
-  const { absenceTypes } = props;
+  const { absenceTypes, handleTypeChange, handleDateChange } = props;
   return (
     <React.Fragment>
       <HStack spacing="24px">
@@ -15,6 +15,7 @@ const AbsencesSearch = (props) => {
             variant="filled"
             w="fit-content"
             placeholder="Filter by absence type"
+            onChange={handleTypeChange}
           >
             {absenceTypes &&
               absenceTypes.map((type, index) => (
@@ -25,14 +26,15 @@ const AbsencesSearch = (props) => {
           </Select>
         </VStack>
         <VStack>
-          <Text position="relative" right="46" mb="4px" fontSize="12px">
-            Filter by date
+          <Text position="relative" mb="4px" fontSize="12px">
+            Filter by date created
           </Text>
           <Input
             type="date"
             variant="filled"
             w="fit-content"
             placeholder="Filter by Date"
+            onChange={handleDateChange}
           />
         </VStack>
       </HStack>

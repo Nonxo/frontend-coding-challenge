@@ -7,7 +7,6 @@ function* read() {
   try {
     const res = yield call(fetchAllAbsentees);
     if (res) {
-      debugger;
       yield put(handleSuccess(types.FETCH_ABSENTEES_SUCCESS, res.payload));
     } else {
       yield put(

@@ -11,7 +11,6 @@ const AbsenceList = (props) => {
   // To display an absentee name
   const displayMemberName = (id) => {
     if (id && listOfMembers.length > 0) {
-      debugger;
       const result = listOfMembers.find((member) => member.userId === id);
       return result.name;
     }
@@ -20,7 +19,6 @@ const AbsenceList = (props) => {
   // To display an absentee avatar
   const displayMemberImage = (id) => {
     if (id && listOfMembers.length > 0) {
-      debugger;
       const result = listOfMembers.find((member) => member.userId === id);
       return result.image;
     }

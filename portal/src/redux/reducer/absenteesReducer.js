@@ -22,8 +22,19 @@ const absenteesReducer = (state = { membersList: [] }, action) => {
     case types.FILTER_BY_TYPE:
       return {
         ...state,
-        loading: false
-      }
+        loading: false,
+        membersList: state.membersList.filter(
+          (absence) => absence.type === action.payload
+        ),
+      };
+    case types.FILTER_BY_DATE:
+      return {
+        ...state,
+        loading: false,
+        membersList: state.membersList.filter(
+          (absence) => absence.createdAt === action.payload
+        ),
+      };
 
     default:
       return state;

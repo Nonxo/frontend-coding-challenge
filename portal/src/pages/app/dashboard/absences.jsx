@@ -13,7 +13,6 @@ const Absences = () => {
   const membersSelector = useSelector((state) => state.Members);
   const absenteesSelector = useSelector((state) => state.Absentees);
   const dispatch = useDispatch();
-  const [absenceTypes, setAbsenceTypes] = useState([]);
 
   // useEffect(() => {
   //   const indexOfLastAbsentee = currentPage * pageSize;
@@ -54,9 +53,17 @@ const Absences = () => {
     }
   };
 
-  const handleFilterByType = () => {
-    dispatch(handleRequest())
-  }
+  // To filter absences by type
+  const handleFilterByType = (event) => {
+    const type = event.target.value;
+    dispatch(handleRequest(types.FILTER_BY_TYPE, type));
+  };
+
+  // To filter absences by date
+  const handleFilterByDate = (event) => {
+    const date = new Date(event.target.value).toISOString();
+    dispatch(handleRequest(types.FILTER_BY_DATE, date));
+  };
 
   // Handle page changes
   const handlePageChange = (nextPage) => {};
@@ -64,18 +71,11 @@ const Absences = () => {
   return (
     <React.Fragment>
       <Box m="4">
-        {/*<Paginator*/}
-        {/*  pagesQuantity={pagesQuantity}*/}
-        {/*  currentPage={currentPage}*/}
-        {/*  onPageChange={handlePageChange}*/}
-        {/*  outerLimit={outerLimit}*/}
-        {/*  innerLimit={innerLimit}*/}
-        {/*  normalStyles={normalStyles}*/}
-        {/*  seperatorStyles={seperatorStyles}*/}
-        {/*>*/}
-        {/*  <PageGroup isInline align="center" />*/}
-        {/*</Paginator>*/}
-        <AbsencesSearch absenceTypes={getAllAbsenceType()} />
+        <AbsencesSearch
+          absenceTypes={getAllAbsenceType()}
+          handleTypeChange={handleFilterByType}
+          handleDateChange={handleFilterByDate}
+        />
         <Table variant="simple" mt="20px">
           <TableCaption>Table showing all absence request</TableCaption>
           <Thead>
