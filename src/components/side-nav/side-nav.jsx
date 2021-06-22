@@ -1,12 +1,12 @@
 import React from "react";
 import { Flex, List, ListIcon, ListItem, Box } from "@chakra-ui/layout";
-import { MdDashboard } from "react-icons/all";
 import { Avatar } from "@chakra-ui/react";
+import { EditIcon } from "@chakra-ui/icons";
 
 const SideNav = () => {
   return (
     <Flex
-      color="white"
+      color="DDE2FF"
       flexDirection="column"
       p="4"
       bg="gray.800"
@@ -20,9 +20,9 @@ const SideNav = () => {
         />
       </Box>
       <Box h="50" marginY="60px">
-        <List spacing={4}>
+        <List spacing={4} color="DDE2FF">
           <ListItem color="gray.300" cursor="pointer">
-            <ListIcon as={MdDashboard} color="gray.300" />
+            <EditIcon h={6} w={6} pr={2} />
             Dashboard
           </ListItem>
         </List>

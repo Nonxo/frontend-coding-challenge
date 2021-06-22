@@ -39,6 +39,7 @@ const Pagination = (props) => {
             isDisabled={currentPage === 1}
             icon={<ArrowLeftIcon h={3} w={3} />}
             mr={4}
+            borderRadius="5px"
           />
         </Tooltip>
         <Tooltip label="Previous Page">
@@ -49,6 +50,7 @@ const Pagination = (props) => {
             }}
             isDisabled={currentPage === 1}
             icon={<ChevronLeftIcon h={6} w={6} />}
+            borderRadius="5px"
           />
         </Tooltip>
       </Flex>
@@ -103,6 +105,7 @@ const Pagination = (props) => {
             }}
             isDisabled={currentPage === pageCount}
             icon={<ChevronRightIcon h={6} w={6} />}
+            borderRadius="5px"
           />
         </Tooltip>
         <Tooltip label="Last Page" aria-label="Tooltip">
@@ -114,6 +117,7 @@ const Pagination = (props) => {
             isDisabled={currentPage === pageCount}
             icon={<ArrowRightIcon h={3} w={3} />}
             ml={4}
+            borderRadius="5px"
           />
         </Tooltip>
       </Flex>
