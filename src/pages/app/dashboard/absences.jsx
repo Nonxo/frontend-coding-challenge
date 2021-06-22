@@ -11,7 +11,7 @@ import * as types from "../../../redux/actions";
 
 const Absences = () => {
   const membersSelector = useSelector((state) => state.Members);
-  const absencesSelector = useSelector((state) => state.Absentees);
+  const absencesSelector = useSelector((state) => state.Absences);
   const dispatch = useDispatch();
   const limit = 10;
 
@@ -20,18 +20,19 @@ const Absences = () => {
     dispatch(handleRequest(types.FETCH_MEMBERS));
   };
 
+  // Fetch all Members
   useEffect(() => {
     getAllMembers();
   }, []);
 
-  // Dispatch all absentees's action
-  const getAllAbsentees = () => {
-    dispatch(handleRequest(types.FETCH_ABSENTEES));
+  // Dispatch absences's action
+  const getAllAbsences = () => {
+    dispatch(handleRequest(types.FETCH_ABSENCES));
   };
 
-  //Fetch all Absentees & Members
+  //Fetch all Absences
   useEffect(() => {
-    getAllAbsentees();
+    getAllAbsences();
   }, []);
 
   // Get all absence types
@@ -61,7 +62,7 @@ const Absences = () => {
     const start = (page - 1) * size;
     const end = page * size;
     dispatch(
-      handleRequest(types.FETCH_ABSENTEES_PAGINATION, {
+      handleRequest(types.FETCH_ABSENCES_PAGINATION, {
         start,
         end,
       })

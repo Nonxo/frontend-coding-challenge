@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import Absences from "./dashboard/absences";
 
 const AppComponent = () => {
-  const absencesSelector = useSelector((state) => state.Absentees);
+  const absencesSelector = useSelector((state) => state.Absences);
   const [total, setTotal] = useState(0);
 
   useEffect(() => {

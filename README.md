@@ -7,7 +7,7 @@ This repository contains all files and dependencies needed to contribute to the 
 ## Technology Stack
 
 ### Tools
-The core technologies utilized in this tool are:
+The core technologies utilized in this web app are:
 
 * JavaScript - the language used to develop the core logic of the dashboard.
 * React - The JavaScript library used to build and manage the core architecture of the dashboard.

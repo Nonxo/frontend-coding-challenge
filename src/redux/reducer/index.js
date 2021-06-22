@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 
-import Absentees from "./absenteesReducer";
+import Absences from "./absencesReducer";
 import Members from "./membersReducers";
 
 const rootReducer = combineReducers({
-  Absentees,
+  Absences,
   Members,
 });
 

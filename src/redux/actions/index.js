@@ -1,12 +1,12 @@
-// Absentees Actions
-export const FETCH_ABSENTEES = "FETCH_ABSENTEES";
-export const FETCH_ABSENTEES_SUCCESS = "FETCH_ABSENTEES_SUCCESS";
-export const FETCH_ABSENTEES_ERROR = "FETCH_ABSENTEES_SUCCESS";
+// Absences Actions
+export const FETCH_ABSENCES = "FETCH_ABSENCES";
+export const FETCH_ABSENCES_SUCCESS = "FETCH_ABSENCES_SUCCESS";
+export const FETCH_ABSENCES_ERROR = "FETCH_ABSENCES_SUCCESS";
 
-//Absentees with Pagination
-export const FETCH_ABSENTEES_PAGINATION = "FETCH_ABSENTEES_PAGINATION";
+//Absences with Pagination
+export const FETCH_ABSENCES_PAGINATION = "FETCH_ABSENCES_PAGINATION";
 
-// Absentees Filter Actions
+// Absences Filter Actions
 export const FILTER_BY_TYPE = "FILTER_BY_TYPE";
 export const FILTER_BY_DATE = "FILTER_BY_TYPE";
 

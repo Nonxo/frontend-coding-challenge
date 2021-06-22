@@ -1,13 +1,13 @@
-import { fetchAllMembers } from "../services/api/membersService";
 import { call, put, takeLatest } from "@redux-saga/core/effects";
 import { handleError, handleSuccess } from "../redux/actions/actionCreator";
 import * as types from "../redux/actions";
+import { fetchAllAbsences } from "../services/api/absencesService";
 
 function* read() {
   try {
-    const res = yield call(fetchAllMembers);
+    const res = yield call(fetchAllAbsences);
     if (res) {
-      yield put(handleSuccess(types.FETCH_MEMBERS_SUCCESS, res.payload));
+      yield put(handleSuccess(types.FETCH_ABSENCES_SUCCESS, res.payload));
     } else {
       yield put(
         handleError(types.FETCH_ABSENCES_ERROR, "No members returned")
@@ -18,6 +18,6 @@ function* read() {
   }
 }
 
-export default function* watchMembers() {
-  yield takeLatest(types.FETCH_MEMBERS, read);
+export default function* watchAbsences() {
+  yield takeLatest(types.FETCH_ABSENCES, read);
 }
