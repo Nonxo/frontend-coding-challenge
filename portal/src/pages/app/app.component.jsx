@@ -17,7 +17,7 @@ const AppComponent = () => {
   }, [absencesSelector]);
 
   return (
-    <div className="app-container">
+    <div data-testid="app-container" className="app-container">
       <Flex>
         <SideNav />
         <Box flex="1" m="3">
