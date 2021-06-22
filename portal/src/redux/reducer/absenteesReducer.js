@@ -10,7 +10,7 @@ const absenteesReducer = (state = { membersList: [], data: [] }, action) => {
     case types.FETCH_ABSENTEES_SUCCESS:
       return {
         ...state,
-        membersList: [...action.data.slice(0, 10)],
+        membersList: action.data,
         total: action.data.length,
         data: action.data,
         loading: false,

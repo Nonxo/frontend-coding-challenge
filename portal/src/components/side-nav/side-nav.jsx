@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Center, List, ListIcon, ListItem, Box } from "@chakra-ui/layout";
+import { Flex, List, ListIcon, ListItem, Box } from "@chakra-ui/layout";
 import { MdDashboard } from "react-icons/all";
 import { Avatar } from "@chakra-ui/react";
 

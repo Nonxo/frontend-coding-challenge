@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Table, Thead, Tfoot, Tr, Th, TableCaption } from "@chakra-ui/react";
 import { Box } from "@chakra-ui/layout";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,16 +14,6 @@ const Absences = () => {
   const absencesSelector = useSelector((state) => state.Absentees);
   const dispatch = useDispatch();
   const limit = 10;
-
-  // useEffect(() => {
-  //   const indexOfLastAbsentee = currentPage * pageSize;
-  //   const indexOfFirstAbsentee = indexOfLastAbsentee - pageSize;
-  //   const result = listOfAbsentees.slice(
-  //     indexOfFirstAbsentee,
-  //     indexOfLastAbsentee
-  //   );
-  //   setListOfAbsentees(result);
-  // }, [currentPage, pageSize]);
 
   // Dispatch all member's action
   const getAllMembers = () => {
@@ -115,7 +105,7 @@ const Absences = () => {
         </Table>
         {absencesSelector.membersList && (
           <Pagination
-            pageOptions={Math.ceil(absencesSelector.total / limit)}
+            pageCount={Math.ceil(absencesSelector.total / limit)}
             pageIndex={0}
             pageSize={limit}
             gotoPage={handlePageChange}

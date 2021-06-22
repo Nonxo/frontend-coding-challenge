@@ -1,23 +1,8 @@
 import React from "react";
 import { Box, Center, Flex, Heading, Spacer, Text } from "@chakra-ui/layout";
-import { Avatar, extendTheme } from "@chakra-ui/react";
+import { Avatar } from "@chakra-ui/react";
 
 const Header = ({ counts }) => {
-  const theme = extendTheme({
-    textStyles: {
-      h1: {
-        fontSize: "24px",
-        fontWeight: "bold",
-        letterSpacing: "0.5",
-      },
-      h5: {
-        fontSize: "12px",
-        fontWeight: "normal",
-        letterSpacing: "0.2",
-      },
-    },
-  });
-
   return (
     <Flex>
       <Box m="3">

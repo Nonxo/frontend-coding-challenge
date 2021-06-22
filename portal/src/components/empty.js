@@ -1,4 +1,4 @@
-import { Box, Center, Flex } from "@chakra-ui/layout";
+import { Box, Center } from "@chakra-ui/layout";
 import React from "react";
 import empty from "../assets/images/empty.svg";
 

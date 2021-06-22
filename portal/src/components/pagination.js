@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Flex,
   IconButton,
@@ -20,35 +20,34 @@ import {
 } from "@chakra-ui/icons";
 
 const Pagination = (props) => {
-  const {
-    canPreviousPage,
-    canNextPage,
-    pageOptions,
-    pageCount,
-    total,
-    gotoPage,
-    nextPage,
-    previousPage,
-    setPageSize,
-    pageIndex,
-    pageSize,
-  } = props;
+  const [currentPage, setCurrentPage] = useState(1);
+  const { pageCount, gotoPage, setPageSize, pageSize, total } = props;
+
+  useEffect(() => {
+    gotoPage(currentPage, pageSize);
+  }, [total]);
 
   return (
     <Flex justifyContent="space-between" m={4} alignItems="center">
       <Flex>
         <Tooltip label="First Page">
           <IconButton
-            onClick={() => gotoPage(0)}
-            isDisabled={!canPreviousPage}
+            onClick={() => {
+              setCurrentPage(1);
+              gotoPage(1, pageSize);
+            }}
+            isDisabled={currentPage === 1}
             icon={<ArrowLeftIcon h={3} w={3} />}
             mr={4}
           />
         </Tooltip>
         <Tooltip label="Previous Page">
           <IconButton
-            onClick={previousPage}
-            isDisabled={pageIndex === 0}
+            onClick={() => {
+              setCurrentPage(currentPage - 1);
+              gotoPage(currentPage - 1, pageSize);
+            }}
+            isDisabled={currentPage === 1}
             icon={<ChevronLeftIcon h={6} w={6} />}
           />
         </Tooltip>
@@ -64,12 +63,13 @@ const Pagination = (props) => {
           w={28}
           min={1}
           size="sm"
-          max={pageOptions}
+          max={pageCount}
           onChange={(value) => {
             const page = value ? parseInt(value) : 0;
+            setCurrentPage(page);
             gotoPage(page, pageSize);
           }}
-          defaultValue={pageIndex + 1}
+          value={currentPage}
         >
           <NumberInputField />
           <NumberInputStepper>
@@ -97,15 +97,21 @@ const Pagination = (props) => {
       <Flex>
         <Tooltip label="Next Page" aria-label="Tooltip">
           <IconButton
-            onClick={nextPage}
-            isDisabled={!canNextPage}
+            onClick={() => {
+              setCurrentPage(currentPage + 1);
+              gotoPage(currentPage + 1, pageSize);
+            }}
+            isDisabled={currentPage === pageCount}
             icon={<ChevronRightIcon h={6} w={6} />}
           />
         </Tooltip>
         <Tooltip label="Last Page" aria-label="Tooltip">
           <IconButton
-            onClick={() => gotoPage(pageCount - 1)}
-            isDisabled={!canNextPage}
+            onClick={() => {
+              setCurrentPage(pageCount);
+              gotoPage(pageCount, pageSize);
+            }}
+            isDisabled={currentPage === pageCount}
             icon={<ArrowRightIcon h={3} w={3} />}
             ml={4}
           />
