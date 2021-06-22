@@ -25,6 +25,7 @@ const Pagination = (props) => {
     canNextPage,
     pageOptions,
     pageCount,
+    total,
     gotoPage,
     nextPage,
     previousPage,
@@ -47,19 +48,13 @@ const Pagination = (props) => {
         <Tooltip label="Previous Page">
           <IconButton
             onClick={previousPage}
-            isDisabled={!canPreviousPage}
+            isDisabled={pageIndex === 0}
             icon={<ChevronLeftIcon h={6} w={6} />}
           />
         </Tooltip>
       </Flex>
 
       <Flex alignItems="center">
-        <Text flexShrink="0" mr={8} fontWeight="bold" fontSize="12px">
-          Showing 1 - 10 of{" "}
-          <Text fontWeight="bold" fontSize="12px" as="span">
-            {pageOptions.length}
-          </Text>
-        </Text>
         <Text flexShrink="0" fontWeight="bold" fontSize="12px">
           Go to page:
         </Text>{" "}
@@ -69,10 +64,10 @@ const Pagination = (props) => {
           w={28}
           min={1}
           size="sm"
-          max={pageOptions.length}
+          max={pageOptions}
           onChange={(value) => {
-            const page = value ? value - 1 : 0;
-            gotoPage(page);
+            const page = value ? parseInt(value) : 0;
+            gotoPage(page, pageSize);
           }}
           defaultValue={pageIndex + 1}
         >
@@ -89,6 +84,7 @@ const Pagination = (props) => {
           onChange={(e) => {
             setPageSize(Number(e.target.value));
           }}
+          isDisabled={true}
         >
           {[10, 20].map((pageSize) => (
             <option key={pageSize} value={pageSize}>

@@ -1,5 +1,5 @@
-import { Spinner } from "@chakra-ui/spinner";
-import { Tbody, Td, Tr } from "@chakra-ui/table";
+import { Spinner } from "@chakra-ui/react";
+import { Tbody, Td, Tr } from "@chakra-ui/react";
 import Empty from "./empty";
 import { Center } from "@chakra-ui/layout";
 

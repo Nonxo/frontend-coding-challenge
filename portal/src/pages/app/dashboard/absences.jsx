@@ -11,8 +11,9 @@ import * as types from "../../../redux/actions";
 
 const Absences = () => {
   const membersSelector = useSelector((state) => state.Members);
-  const absenteesSelector = useSelector((state) => state.Absentees);
+  const absencesSelector = useSelector((state) => state.Absentees);
   const dispatch = useDispatch();
+  const limit = 10;
 
   // useEffect(() => {
   //   const indexOfLastAbsentee = currentPage * pageSize;
@@ -45,8 +46,8 @@ const Absences = () => {
 
   // Get all absence types
   const getAllAbsenceType = () => {
-    if (absenteesSelector.membersList) {
-      const result = absenteesSelector.membersList.map(
+    if (absencesSelector.membersList) {
+      const result = absencesSelector.membersList.map(
         (absentee) => absentee.type
       );
       return [...new Set(result)];
@@ -66,7 +67,16 @@ const Absences = () => {
   };
 
   // Handle page changes
-  const handlePageChange = (nextPage) => {};
+  const handlePageChange = (page, size) => {
+    const start = (page - 1) * size;
+    const end = page * size;
+    dispatch(
+      handleRequest(types.FETCH_ABSENTEES_PAGINATION, {
+        start,
+        end,
+      })
+    );
+  };
 
   return (
     <React.Fragment>
@@ -77,7 +87,10 @@ const Absences = () => {
           handleDateChange={handleFilterByDate}
         />
         <Table variant="simple" mt="20px">
-          <TableCaption>Table showing all absence request</TableCaption>
+          {!absencesSelector.loading &&
+            absencesSelector.membersList.length < 1 && (
+              <TableCaption>Sorry we cannot find any record</TableCaption>
+            )}
           <Thead>
             <Tr>
               <Th></Th>
@@ -89,21 +102,24 @@ const Absences = () => {
               <Th>Admitter Note</Th>
             </Tr>
           </Thead>
-          {absenteesSelector.loading ? (
+          {absencesSelector.loading ? (
             <TableProps span={7} loading={true} />
           ) : (
             <AbsenceList
-              absenceSelector={absenteesSelector}
+              absenceSelector={absencesSelector}
               listOfMembers={membersSelector.listOfAllMembers}
             />
           )}
 
           <Tfoot></Tfoot>
         </Table>
-        {absenteesSelector.membersList && (
+        {absencesSelector.membersList && (
           <Pagination
-            pageOptions={absenteesSelector.membersList}
+            pageOptions={Math.ceil(absencesSelector.total / limit)}
             pageIndex={0}
+            pageSize={limit}
+            gotoPage={handlePageChange}
+            total={absencesSelector.total}
           />
         )}
       </Box>

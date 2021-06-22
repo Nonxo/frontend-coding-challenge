@@ -3,6 +3,9 @@ export const FETCH_ABSENTEES = "FETCH_ABSENTEES";
 export const FETCH_ABSENTEES_SUCCESS = "FETCH_ABSENTEES_SUCCESS";
 export const FETCH_ABSENTEES_ERROR = "FETCH_ABSENTEES_SUCCESS";
 
+//Absentees with Pagination
+export const FETCH_ABSENTEES_PAGINATION = "FETCH_ABSENTEES_PAGINATION";
+
 // Absentees Filter Actions
 export const FILTER_BY_TYPE = "FILTER_BY_TYPE";
 export const FILTER_BY_DATE = "FILTER_BY_TYPE";
