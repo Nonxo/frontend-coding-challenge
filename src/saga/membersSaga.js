@@ -10,7 +10,7 @@ function* read() {
       yield put(handleSuccess(types.FETCH_MEMBERS_SUCCESS, res.payload));
     } else {
       yield put(
-        handleError(types.FETCH_ABSENTEES_ERROR, "No members returned")
+        handleError(types.FETCH_ABSENCES_ERROR, "No members returned")
       );
     }
   } catch (e) {

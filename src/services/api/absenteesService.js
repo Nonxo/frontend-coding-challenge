@@ -1,6 +1,6 @@
-/** Service to Fetch all absentees **/
+/** Service to Fetch all absences **/
 
-export const fetchAllAbsentees = () => {
+export const fetchAllAbsences = () => {
   return fetch("api/json_files/absences.json", {
     headers: {
       "Content-Type": "application/json",

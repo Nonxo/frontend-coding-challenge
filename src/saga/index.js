@@ -1,9 +1,9 @@
 import { all } from "@redux-saga/core/effects";
-import watchAbsentees from "./absentees.saga";
+import watchAbsences from "./absences.saga";
 import watchMembers from "./membersSaga";
 
 function* rootSaga() {
-  yield all([watchAbsentees(), watchMembers()]);
+  yield all([watchAbsences(), watchMembers()]);
 }
 
 export default rootSaga;

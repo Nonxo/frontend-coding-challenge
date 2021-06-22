@@ -1,13 +1,13 @@
 import * as types from "../actions";
 
-const absenteesReducer = (state = { membersList: [], data: [] }, action) => {
+const absencesReducer = (state = { membersList: [], data: [] }, action) => {
   switch (action.type) {
-    case types.FETCH_ABSENTEES:
+    case types.FETCH_ABSENCES:
       return {
         ...state,
         loading: true,
       };
-    case types.FETCH_ABSENTEES_SUCCESS:
+    case types.FETCH_ABSENCES_SUCCESS:
       return {
         ...state,
         membersList: action.data,
@@ -15,7 +15,7 @@ const absenteesReducer = (state = { membersList: [], data: [] }, action) => {
         data: action.data,
         loading: false,
       };
-    case types.FETCH_ABSENTEES_ERROR:
+    case types.FETCH_ABSENCES_ERROR:
       return {
         ...state,
         error: action.error,
@@ -39,7 +39,7 @@ const absenteesReducer = (state = { membersList: [], data: [] }, action) => {
           ),
         ],
       };
-    case types.FETCH_ABSENTEES_PAGINATION:
+    case types.FETCH_ABSENCES_PAGINATION:
       return {
         ...state,
         loading: false,
@@ -53,4 +53,4 @@ const absenteesReducer = (state = { membersList: [], data: [] }, action) => {
   }
 };
 
-export default absenteesReducer;
+export default absencesReducer;

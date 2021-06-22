@@ -1,16 +1,16 @@
 import { call, put, takeLatest } from "@redux-saga/core/effects";
 import { handleError, handleSuccess } from "../redux/actions/actionCreator";
 import * as types from "../redux/actions";
-import { fetchAllAbsentees } from "../services/api/absenteesService";
+import { fetchAllAbsences } from "../services/api/absencesService";
 
 function* read() {
   try {
-    const res = yield call(fetchAllAbsentees);
+    const res = yield call(fetchAllAbsences);
     if (res) {
-      yield put(handleSuccess(types.FETCH_ABSENTEES_SUCCESS, res.payload));
+      yield put(handleSuccess(types.FETCH_ABSENCES_SUCCESS, res.payload));
     } else {
       yield put(
-        handleError(types.FETCH_ABSENTEES_ERROR, "No members returned")
+        handleError(types.FETCH_ABSENCES_ERROR, "No members returned")
       );
     }
   } catch (e) {
@@ -18,6 +18,6 @@ function* read() {
   }
 }
 
-export default function* watchAbsentees() {
-  yield takeLatest(types.FETCH_ABSENTEES, read);
+export default function* watchAbsences() {
+  yield takeLatest(types.FETCH_ABSENCES, read);
 }
