@@ -32,3 +32,11 @@ test("Contains all Child components", () => {
   );
   expect(componentsInAppComponent.length).toBe(6);
 });
+
+test("Total count is zero on app component load", () => {
+  const { getByTestId } = render(<AppComponent />);
+
+  const count = getByTestId("count");
+
+  expect(count.textContent).toEqual(0);
+});

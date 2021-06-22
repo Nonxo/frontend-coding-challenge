@@ -57,6 +57,8 @@ const AbsenceList = (props) => {
                       : "orange"
                   }
                   fontSize="12"
+                  fontWeight="normal"
+                  borderRadius="4px"
                 >
                   {Utils.getAbsenceStatus(absence)}
                 </Badge>

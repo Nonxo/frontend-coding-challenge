@@ -15,6 +15,7 @@ const Header = ({ counts }) => {
             fontWeight="500"
             color="gray.500"
             pl="5px"
+            data-testid="count"
           >
             {counts} Total absences
           </Text>
