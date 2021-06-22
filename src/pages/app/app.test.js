@@ -2,7 +2,7 @@ import React from "react";
 
 import AppComponent from "./app.component";
 import { unmountComponentAtNode } from "react-dom";
-import { act, render } from "@testing-library/react";
+import { act, getByTestId, render, within } from "@testing-library/react";
 
 let container = null;
 beforeEach(() => {
@@ -17,9 +17,18 @@ afterEach(() => {
   container = null;
 });
 
-it("renders with child components", () => {
+it("renders className in App component", () => {
   act(() => {
     render(<AppComponent />, container);
   });
   expect(container.firstChild.classList.contains("app-container")).toBe(true);
+});
+
+test("Contains all Child components", () => {
+  const { getAllByTestId, getByTestId } = render(<AppComponent />);
+  const childComponent = getByTestId("child-component");
+  const componentsInAppComponent = within(childComponent).getAllByTestId(
+    "child-component"
+  );
+  expect(componentsInAppComponent.length).toBe(6);
 });
