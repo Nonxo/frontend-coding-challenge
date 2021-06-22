@@ -17,13 +17,13 @@ const AppComponent = () => {
   }, [absencesSelector]);
 
   return (
-    <div data-testid="app-container" className="app-container">
-      <Flex>
-        <SideNav />
-        <Box flex="1" m="3">
-          <Flex flexDirection="column">
-            <Header counts={total} />
-            <Absences />
+    <div className="app-container">
+      <Flex data-testid="child-component">
+        <SideNav data-testid="child-component" />
+        <Box data-testid="child-component" flex="1" m="3">
+          <Flex data-testid="child-component" flexDirection="column">
+            <Header data-testid="child-component" counts={total} />
+            <Absences data-testid="child-component" />
           </Flex>
         </Box>
       </Flex>
