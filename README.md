@@ -1,94 +1,70 @@
-<p align="center">
-  <img src="https://crewmeister.com/images/logo_crewmeister_without_text.svg" />
-</p>
+# Getting Started with Create React App
 
-# 🚀 Crewmeister coding challenge - Frontend (React)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Hello and thanks in participating in the crewmeister coding challenge. This coding exercise will help us get a better feeling about your coding process.
+## Available Scripts
 
-If you have any questions, we're happy to help you. Reach the devs at challenge@crewmeister.com.
+In the project directory, you can run:
 
-## Context
+### `yarn start`
 
-At Crewmeister we like to work closely with our clients, listening to their demands and developing solutions for their problems. One of the most requested features is a way for company owners to manage sickness and vacations of employees.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-We decided to implement this feature for our clients and we are calling it the Absence Manager.
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-## Product Requirements
+### `yarn test`
 
-- [ ] I want to see a list of absences including the names of the employees.
-- [ ] I want to see the first 10 absences, with the ability to paginate.
-- [ ] I want to see a total number of absences.
-- [ ] For each absence I want to see:
-  - [ ] Member name
-  - [ ] Type of absence
-  - [ ] Period
-  - [ ] Member note (when available)
-  - [ ] Status (can be 'Requested', 'Confirmed' or 'Rejected')
-  - [ ] Admitter note (when available)
-- [ ] I want to filter absences by type.
-- [ ] I want to filter absences by date.
-- [ ] I want to see a loading state until the list is available.
-- [ ] I want to see an error state if the list is unavailable.
-- [ ] I want to see an empty state if there are no results.
-- [ ] (Bonus) I can generate an iCal file and import it into outlook.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Your Mission
+### `yarn build`
 
-Create the React application that satisfies all must-have requirements above, plus any nice-to-have requirements you wish to include.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-We provided a couple of JSON files with the mock data necessary to implement the screens, you can use the files straight into the frontend or create a small API (bonus), it's your choice.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-You can use any boilerplate/approach you prefer (nextjs, create react app, ...), but try to keep it simple. We encourage you to use your favorite tools and packages to build a solid React application.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-You can assume that you do not have to support legacy browsers. Feel free to use modern features such as **fetch** or **flexbox**.
+### `yarn eject`
 
-(bonus) Host the website on the service of your choice (Heroku, AWS, GCloud, ...).
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-Optional: build the project and deploy (ie make it available as a static project) on Github Pages, otherwise please provide detailed instructions on how to start the project locally.
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## Tech Requirements
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-- React
-- Tests: Jest + react-testing-library / enzyme
-- Code Linter
-- Redux is a plus.
-- Typescript is a plus.
-- CSSinJS is a plus: styled-components, styled-system, ...
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Instructions
+## Learn More
 
-- Clone this repo.
-- The challenge is on!
-- Build a performant, clean and well-structured solution.
-- Commit early and often. We want to be able to check your progress.
-- Include a README with instructions on how to run your project.
-- Please complete your working solution within 7 days of receiving this challenge.
-- Whenever you're done please deliver the project following the instructions below.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-We'll review your submission as soon as possible. Key-points we're going to review:
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-- Naming (files, functions, components, ...).
-- Tests.
-- Code structure, readability, performance and consistency.
-- function lengths.
-- Commits + commit messages.
-- Clean code.
-- Good documentation and README instructions.
+### Code Splitting
 
-An essential part of the challenge is also coming up with your own solutions and making reasonable assumptions about the implementation of the acceptance criteria.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-## Project delivery instructions
+### Analyzing the Bundle Size
 
-To submit the project for evaluation please follow the steps below:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-- Create a **public** repo on your personal Github.
-- Add the new repo as a _remote_ on your local repo.
-- Push your code to your new remote repo.
-- Send us the link! The e-mail is: challenge@crewmeister.com
+### Making a Progressive Web App
 
-## That's it!
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-Happy coding!
+### Advanced Configuration
 
-<img src="https://user-images.githubusercontent.com/5693916/30273942-84252588-96fb-11e7-9420-5516b92cb1f7.gif" data-canonical-src="https://user-images.githubusercontent.com/5693916/30273942-84252588-96fb-11e7-9420-5516b92cb1f7.gif" width="150" height="150" />
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `yarn build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
